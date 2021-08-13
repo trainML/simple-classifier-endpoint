@@ -7,7 +7,7 @@ async def create_endpoint():
     job = await client.jobs.create(
         name="Simple Image Classifier",
         type="endpoint",
-        gpu_type="GTX 1060",
+        gpu_type="RTX 2080 Ti",
         gpu_count=1,
         disk_size=10,
         model=dict(
