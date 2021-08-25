@@ -27,7 +27,7 @@ Once the endpoint is running, it will print the endpoint URL to use in the subse
 To get a prediction for the endpoint from the command line, you can use the `classify_image.sh` bash script in the repository. Simply specify the endpoint address from above and the path to a file you want to predict as the two arguments. For example:
 
 ```
-./predict_scan.sh https://<job_id>.trainml.cloud ./images/pizza.jpg
+./classify_image.sh https://<job_id>.trainml.cloud ./images/pizza.jpg
 ```
 
 #### Using a Browser
