@@ -3,11 +3,12 @@ from trainml import TrainML
 
 client = TrainML()
 
+
 async def create_endpoint():
     job = await client.jobs.create(
         name="Simple Image Classifier",
         type="endpoint",
-        gpu_type="RTX 2080 Ti",
+        gpu_types=["rtx3090"],
         gpu_count=1,
         disk_size=10,
         model=dict(
@@ -15,7 +16,7 @@ async def create_endpoint():
             source_uri="https://github.com/trainML/simple-tensorflow-classifier.git",
         ),
         environment=dict(
-            type="DEEPLEARNING_PY38",
+            type="DEEPLEARNING_PY39",
         ),
         endpoint=dict(
             routes=[
@@ -44,5 +45,5 @@ async def create_endpoint():
     return job
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     asyncio.run(create_endpoint())

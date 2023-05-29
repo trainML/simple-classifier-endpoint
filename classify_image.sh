@@ -11,8 +11,15 @@ then
   usage
 fi
 
+function cross_base64() {
+  case "$OSTYPE" in
+    darwin*)  base64 -i ${1};; 
+    *)        base64 ${1} ;;
+  esac
+}
+
 ENDPOINT_URL=$1
 FILE_NAME=$(basename ${2})
 
-(echo -n "{\"name\": \"${FILE_NAME}\", \"contents\": \""; base64 ${2}; echo '"}') |
+(echo -n "{\"name\": \"${FILE_NAME}\", \"contents\": \""; cross_base64 ${2}; echo '"}') |
 curl -H "Content-Type: application/json" -d @-  ${ENDPOINT_URL}/predict 
