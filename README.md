@@ -27,11 +27,11 @@ Once the endpoint is running, it will print the endpoint URL to use in the subse
 To get a prediction for the endpoint from the command line, you can use the `classify_image.sh` bash script in the repository. Simply specify the endpoint address from above and the path to a file you want to predict as the two arguments. For example:
 
 ```
-./classify_image.sh https://<job_id>.trainml.cloud ./images/pizza.jpg
+./classify_image.sh <endpoint_address> ./images/pizza.jpg
 ```
 
 #### Using a Browser
 
 Open the file `front-end/src/config.js` with a text editor. Change the `api_address` value to the endpoint URL from the previous step and save the file. If you changed the route path in the previous step, you must also update that here.
 
-Go to the `front-end` folder of the repository in a terminal window and type `npm start`. This will open a web browser to http://localhost:3000 and load the example front end. Click the `Upload File` button and select an image to classify (example image files are in the `images` folder of this repository). Click `Get Prediction` to send the file to the endpoint. When the response comes back, the list of the top five class categories and their confidence rating will be displayed on the right. Click `Upload New File` and `Get Prediction` on additional images as desired.
+Go to the `front-end` folder of the repository in a terminal window and type `npm install`. Once the package installation is complete, run `npm start`. This will open a web browser to http://localhost:3000 and load the example front end. Click the `Upload File` button and select an image to classify (example image files are in the `images` folder of this repository). Click `Get Prediction` to send the file to the endpoint. When the response comes back, the list of the top five class categories and their confidence rating will be displayed on the right. Click `Upload New File` and `Get Prediction` on additional images as desired.

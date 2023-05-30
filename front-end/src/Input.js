@@ -1,29 +1,12 @@
 import { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
-import grey from '@material-ui/core/colors/grey';
-import SendIcon from '@material-ui/icons/Send';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
 
 import UploadButton from './UploadButton';
-
-const useStyles = makeStyles((theme) => ({
-  image: {
-    maxWidth: '100%',
-    maxHeight: '100%',
-  },
-  paper: {
-    height: '600px',
-    alignContent: 'center',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: grey[300],
-  },
-}));
 
 const getImage = async (e) => {
   const filename = e.target.files[0].name;
@@ -40,7 +23,6 @@ const getImage = async (e) => {
 };
 
 function Input({ onChange, onSubmit }) {
-  const classes = useStyles();
   const [filename, setFilename] = useState();
   const [image, setImage] = useState();
   const [submitting, setSubmitting] = useState(false);
@@ -53,7 +35,10 @@ function Input({ onChange, onSubmit }) {
             <Typography variant='h5'>Input Image</Typography>
 
             <img
-              className={classes.image}
+              style={{
+                maxWidth: '100%',
+                maxHeight: '100%',
+              }}
               alt='uploaded'
               src={`data:image/png;base64,${image}`}
             />
@@ -99,7 +84,17 @@ function Input({ onChange, onSubmit }) {
     );
   } else {
     return (
-      <Paper variant='outlined' className={classes.paper}>
+      <Paper
+        variant='outlined'
+        sx={{
+          height: '600px',
+          alignContent: 'center',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#e0e0e0',
+        }}
+      >
         <UploadButton
           name='Upload File'
           onChange={async (e) => {

@@ -1,5 +1,4 @@
-import { red } from '@material-ui/core/colors';
-import { createTheme } from '@material-ui/core/styles';
+import { createTheme } from '@mui/material/styles';
 
 // A custom theme for this app
 const theme = createTheme({
@@ -20,7 +19,7 @@ const theme = createTheme({
       contrastText: '#fff',
     },
     error: {
-      main: red.A400,
+      main: '#ff1744',
     },
     background: {
       default: '#fff',

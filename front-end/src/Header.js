@@ -1,41 +1,26 @@
-import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-
-const useStyles = makeStyles((theme) => ({
-  logo: {
-    width: '250px',
-  },
-  paper: {
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    backgroundColor: theme.palette.brandBlack.main,
-  },
-  header: {
-    color: theme.palette.brandBlack.contrastText,
-    paddingTop: '15px',
-  },
-}));
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper';
 
 function Header() {
-  const classes = useStyles();
   return (
-    <Paper className={classes.paper}>
+    <Paper
+      sx={{ padding: '10px', textAlign: 'center', backgroundColor: '#130201' }}
+    >
       <Grid container xs={12}>
         <Grid item xs={12} md={3}>
           <a href='https://www.trainml.ai'>
             <img
               alt='logo'
-              className={classes.logo}
+              style={{ width: '250px' }}
               src='https://www.trainml.ai/static/img/trainML-logo-purple.png'
             />
           </a>
         </Grid>
         <Grid item xs={12} md={9}>
           <Box textAlign='left'>
-            <Typography variant='h3' className={classes.header}>
+            <Typography variant='h3' sx={{ color: '#fff', paddingTop: '15px' }}>
               Image Classifier Endpoint
             </Typography>
           </Box>

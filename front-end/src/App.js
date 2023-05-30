@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
-import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
+import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
 
 import config from './config';
 import Input from './Input';

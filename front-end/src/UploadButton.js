@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
-import PublishIcon from '@material-ui/icons/Publish';
+import Button from '@mui/material/Button';
+import PublishIcon from '@mui/icons-material/Publish';
 
 const UploadButton = ({ name, onChange, disabled }) => {
   let input;

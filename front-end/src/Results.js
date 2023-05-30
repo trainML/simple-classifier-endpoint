@@ -1,24 +1,15 @@
-import { makeStyles } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    backgroundColor: theme.palette.primary.main,
-  },
-  table: {},
-}));
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 
 function Results({ predictions }) {
-  const classes = useStyles();
   if (!predictions.length) {
     return null;
   } else {
@@ -32,7 +23,7 @@ function Results({ predictions }) {
           return (
             <Grid container direction='column' key={i}>
               <br />
-              <Paper variant='outlined' className={classes.paper}>
+              <Paper variant='outlined' sx={{ backgroundColor: '#c924d2' }}>
                 <Grid item xs={12}>
                   <Box textAlign='center'>
                     <Typography variant='subtitle1'>
